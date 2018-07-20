@@ -12,8 +12,8 @@ import (
 	"github.com/mgechev/revive/formatter"
 
 	"github.com/BurntSushi/toml"
+	"github.com/DataDog/revive/rule"
 	"github.com/mgechev/revive/lint"
-	"github.com/mgechev/revive/rule"
 )
 
 func fail(err string) {
@@ -41,6 +41,7 @@ var defaultRules = []lint.Rule{
 	&rule.TimeNamingRule{},
 	&rule.ContextKeysType{},
 	&rule.ContextAsArgumentRule{},
+	&rule.UnassignedFlakyRule{},
 }
 
 var allRules = append([]lint.Rule{
